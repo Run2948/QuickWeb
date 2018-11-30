@@ -1,0 +1,32 @@
+<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Project">
+  <TemplateData>
+    <Name>Quick.Repository</Name>
+    <Description>&lt;没有可用的说明&gt;</Description>
+    <ProjectType>CSharp</ProjectType>
+    <ProjectSubType>
+    </ProjectSubType>
+    <SortOrder>1000</SortOrder>
+    <CreateNewFolder>true</CreateNewFolder>
+    <DefaultName>Quick.Repository</DefaultName>
+    <ProvideDefaultName>true</ProvideDefaultName>
+    <LocationField>Enabled</LocationField>
+    <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+    <Icon>__TemplateIcon.ico</Icon>
+  </TemplateData>
+  <TemplateContent>
+    <Project TargetFileName="Quick.Repository.csproj" File="Quick.Repository.csproj" ReplaceParameters="true">
+      <ProjectItem ReplaceParameters="true" TargetFileName="app.config">app.config</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="BaseRepository.cs">BaseRepository.cs</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="packages.config">packages.config</ProjectItem>
+      <Folder Name="Properties" TargetFolderName="Properties">
+        <ProjectItem ReplaceParameters="true" TargetFileName="AssemblyInfo.cs">AssemblyInfo.cs</ProjectItem>
+      </Folder>
+      <ProjectItem ReplaceParameters="true" TargetFileName="readme.txt">readme.txt</ProjectItem>
+      <Folder Name="T4" TargetFolderName="T4">
+        <ProjectItem ReplaceParameters="true" TargetFileName="BaseRepository.tt">BaseRepository.tt</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="BaseRepository.cs">BaseRepository.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="false" TargetFileName="MultipleOutputHelper.ttinclude">MultipleOutputHelper.ttinclude</ProjectItem>
+      </Folder>
+    </Project>
+  </TemplateContent>
+</VSTemplate>

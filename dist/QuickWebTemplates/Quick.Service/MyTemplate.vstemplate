@@ -1,0 +1,33 @@
+<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Project">
+  <TemplateData>
+    <Name>Quick.Service</Name>
+    <Description>&lt;没有可用的说明&gt;</Description>
+    <ProjectType>CSharp</ProjectType>
+    <ProjectSubType>
+    </ProjectSubType>
+    <SortOrder>1000</SortOrder>
+    <CreateNewFolder>true</CreateNewFolder>
+    <DefaultName>Quick.Service</DefaultName>
+    <ProvideDefaultName>true</ProvideDefaultName>
+    <LocationField>Enabled</LocationField>
+    <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+    <Icon>__TemplateIcon.ico</Icon>
+  </TemplateData>
+  <TemplateContent>
+    <Project TargetFileName="Quick.Service.csproj" File="Quick.Service.csproj" ReplaceParameters="true">
+      <ProjectItem ReplaceParameters="true" TargetFileName="App.config">App.config</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="BaseService.cs">BaseService.cs</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="packages.config">packages.config</ProjectItem>
+      <Folder Name="Properties" TargetFolderName="Properties">
+        <ProjectItem ReplaceParameters="true" TargetFileName="AssemblyInfo.cs">AssemblyInfo.cs</ProjectItem>
+      </Folder>
+      <ProjectItem ReplaceParameters="true" TargetFileName="readme.txt">readme.txt</ProjectItem>
+      <Folder Name="T4" TargetFolderName="T4">
+        <ProjectItem ReplaceParameters="true" TargetFileName="BaseService.tt">BaseService.tt</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="BaseService.cs">BaseService.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="false" TargetFileName="MultipleOutputHelper.ttinclude">MultipleOutputHelper.ttinclude</ProjectItem>
+      </Folder>
+      <ProjectItem ReplaceParameters="true" TargetFileName="UserInfoService.cs">UserInfoService.cs</ProjectItem>
+    </Project>
+  </TemplateContent>
+</VSTemplate>

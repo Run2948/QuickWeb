@@ -1,0 +1,46 @@
+<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Project">
+  <TemplateData>
+    <Name>Quick.Common</Name>
+    <Description>&lt;没有可用的说明&gt;</Description>
+    <ProjectType>CSharp</ProjectType>
+    <ProjectSubType>
+    </ProjectSubType>
+    <SortOrder>1000</SortOrder>
+    <CreateNewFolder>true</CreateNewFolder>
+    <DefaultName>Quick.Common</DefaultName>
+    <ProvideDefaultName>true</ProvideDefaultName>
+    <LocationField>Enabled</LocationField>
+    <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+    <Icon>__TemplateIcon.ico</Icon>
+  </TemplateData>
+  <TemplateContent>
+    <Project TargetFileName="Quick.Common.csproj" File="Quick.Common.csproj" ReplaceParameters="true">
+      <ProjectItem ReplaceParameters="true" TargetFileName="app.config">app.config</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="Assemblies.cs">Assemblies.cs</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="AutoMapperConfig.cs">AutoMapperConfig.cs</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="CommonHelper.cs">CommonHelper.cs</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="DrawingSecurityCode.cs">DrawingSecurityCode.cs</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="HangfireHelper.cs">HangfireHelper.cs</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="JsonHelper.cs">JsonHelper.cs</ProjectItem>
+      <Folder Name="Models" TargetFolderName="Models">
+        <ProjectItem ReplaceParameters="true" TargetFileName="JsonNetResult.cs">JsonNetResult.cs</ProjectItem>
+      </Folder>
+      <ProjectItem ReplaceParameters="true" TargetFileName="packages.config">packages.config</ProjectItem>
+      <Folder Name="Properties" TargetFolderName="Properties">
+        <ProjectItem ReplaceParameters="true" TargetFileName="AssemblyInfo.cs">AssemblyInfo.cs</ProjectItem>
+      </Folder>
+      <ProjectItem ReplaceParameters="true" TargetFileName="readme.txt">readme.txt</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="ServiceManager.cs">ServiceManager.cs</ProjectItem>
+      <Folder Name="UEditor" TargetFolderName="UEditor">
+        <ProjectItem ReplaceParameters="true" TargetFileName="Config.cs">Config.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="ConfigHandler.cs">ConfigHandler.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="CrawlerHandler.cs">CrawlerHandler.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="Handler.cs">Handler.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="ListFileManager.cs">ListFileManager.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="NotSupportedHandler.cs">NotSupportedHandler.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="PathFormatter.cs">PathFormatter.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="UploadHandler.cs">UploadHandler.cs</ProjectItem>
+      </Folder>
+    </Project>
+  </TemplateContent>
+</VSTemplate>
