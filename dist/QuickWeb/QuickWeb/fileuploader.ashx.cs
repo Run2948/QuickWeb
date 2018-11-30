@@ -6,10 +6,12 @@ using System.Web;
 
 namespace $safeprojectname$
 {
+#pragma warning disable IDE1006 // 命名样式
     /// <summary>
     /// fileuploader 的摘要说明
     /// </summary>
     public class fileuploader : IHttpHandler
+#pragma warning restore IDE1006 // 命名样式
     {
         public void ProcessRequest(HttpContext context)
         {

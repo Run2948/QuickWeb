@@ -19,7 +19,7 @@
         <Dependency Id="Microsoft.Framework.NDP" DisplayName="Microsoft .NET Framework" d:Source="Manual" Version="[4.5,)" />
     </Dependencies>
     <Assets>
-        <Asset Type="Microsoft.VisualStudio.ProjectTemplate" d:Source="File" Path="ProjectTemplates" TargetVersion="1.0.0" d:TargetPath="ProjectTemplates\QuickWeb.zip" />
+        <Asset Type="Microsoft.VisualStudio.ProjectTemplate" d:Source="File" TargetVersion="1.0.0" d:TargetPath="ProjectTemplates\QuickWeb.zip" />
     </Assets>
     <Prerequisites>
         <Prerequisite Id="Microsoft.VisualStudio.Component.CoreEditor" Version="[15.0,16.0)" DisplayName="Visual Studio core editor" />
