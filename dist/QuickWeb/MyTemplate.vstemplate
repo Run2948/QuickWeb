@@ -1,7 +1,7 @@
 <VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="ProjectGroup">
   <TemplateData>
     <Name>QuickWeb</Name>
-    <Description>基于DDD的ASP.NET MVC 5 快速开发框架 </Description>
+    <Description>基于DDD的ASP.NET MVC5快速开发框架</Description>
     <ProjectType>CSharp</ProjectType>
     <ProjectSubType>
     </ProjectSubType>
