@@ -8,7 +8,7 @@
 * `Quick.IService`：业务逻辑层接口
 * `Quick.Service`：业务逻辑层
 * `QuickWeb.Vsix`：项目VSIX插件生成层
-* `QuickWeb`：UI展示层
+* `QuickWeb`：UI表现层
 
 #### 自定义项目模板：
 * [VS自定义项目模板：[1]导出模板](https://jingyan.baidu.com/article/9113f81b0f9fed2b3214c70c.html)
