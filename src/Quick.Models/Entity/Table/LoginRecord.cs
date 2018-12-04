@@ -63,7 +63,7 @@ namespace Quick.Models.Entity.Table
         /// 关联的用户id
         /// </summary>
         [ForeignKey("UserInfo")]
-        public int UserInfoId { get; set; }
+        public long UserInfoId { get; set; }
 
         public virtual UserInfo UserInfo { get; set; }
     }
