@@ -6,7 +6,7 @@ using System.Configuration;
 using System.Linq;
 using System.Web;
 
-namespace $safeprojectname$
+namespace QuickWeb
 {
     public class HangfireConfig
     {

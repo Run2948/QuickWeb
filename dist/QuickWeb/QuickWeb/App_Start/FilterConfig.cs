@@ -1,11 +1,11 @@
-﻿using $safeprojectname$.Filters;
+﻿using QuickWeb.Filters;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace $safeprojectname$
+namespace QuickWeb
 {
     public class FilterConfig
     {

@@ -9,6 +9,7 @@ using System.Web.SessionState;
 using System.Web.Http;
 using Masuit.Tools.Logging;
 using System.Web.Optimization;
+using Z.EntityFramework.Extensions;
 
 namespace QuickWeb
 {
@@ -17,12 +18,14 @@ namespace QuickWeb
         void Application_Start(object sender, EventArgs e)
         {
             // 在应用程序启动时运行的代码
+            LicenseManager.AddLicense("67;100-MASUIT", "809739091397182EC1ECEA8770EB4218");
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             GlobalConfiguration.Configure(WebApiConfig.Register);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             // 使用之前请根据需要配置Bundles文件
             //BundleConfig.RegisterBundles(BundleTable.Bundles);
+            AutofacConfig.Register();
             StartupConfig.Startup();
         }
 

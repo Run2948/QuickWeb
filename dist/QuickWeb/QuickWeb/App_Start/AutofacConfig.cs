@@ -5,7 +5,7 @@ using Hangfire;
 using Masuit.Tools.NoSQL;
 using Quick.Common;
 using Quick.Models.Application;
-using $safeprojectname$.Models.Hangfire;
+using QuickWeb.Models.Hangfire;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,7 +13,7 @@ using System.Reflection;
 using System.Web.Mvc;
 using GlobalConfiguration = System.Web.Http.GlobalConfiguration;
 
-namespace $safeprojectname$
+namespace QuickWeb
 {
     /// <summary>
     /// Autofac配置类
@@ -29,11 +29,9 @@ namespace $safeprojectname$
             // 第一步：注册控制器
             var builder = new ContainerBuilder();
             // 告诉autofac将来要创建的控制器类存放在哪个程序集
-            builder.RegisterControllers(Assembly.GetExecutingAssembly()).PropertiesAutowired(PropertyWiringOptions.PreserveSetValues)
-            // 把当前程序集中的 Controller 都注册
-            //builder.RegisterControllers(typeof(Global).Assembly)
-            // 自动给属性进行“注入”
-            .PropertiesAutowired(PropertyWiringOptions.PreserveSetValues);
+            builder.RegisterControllers(Assembly.GetExecutingAssembly()).PropertiesAutowired(PropertyWiringOptions.PreserveSetValues);
+            // 把当前程序集中的 Controller 都注册                  // 自动给属性进行“注入”
+            //builder.RegisterControllers(typeof(Global).Assembly).PropertiesAutowired(PropertyWiringOptions.PreserveSetValues);
             builder.RegisterWebApiFilterProvider(GlobalConfiguration.Configuration);
             builder.RegisterApiControllers(Assembly.GetExecutingAssembly());
             builder.RegisterFilterProvider();

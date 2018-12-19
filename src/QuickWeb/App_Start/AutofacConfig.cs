@@ -29,11 +29,9 @@ namespace QuickWeb
             // 第一步：注册控制器
             var builder = new ContainerBuilder();
             // 告诉autofac将来要创建的控制器类存放在哪个程序集
-            builder.RegisterControllers(Assembly.GetExecutingAssembly()).PropertiesAutowired(PropertyWiringOptions.PreserveSetValues)
-            // 把当前程序集中的 Controller 都注册
-            //builder.RegisterControllers(typeof(Global).Assembly)
-            // 自动给属性进行“注入”
-            .PropertiesAutowired(PropertyWiringOptions.PreserveSetValues);
+            builder.RegisterControllers(Assembly.GetExecutingAssembly()).PropertiesAutowired(PropertyWiringOptions.PreserveSetValues);
+            // 把当前程序集中的 Controller 都注册                  // 自动给属性进行“注入”
+            //builder.RegisterControllers(typeof(Global).Assembly).PropertiesAutowired(PropertyWiringOptions.PreserveSetValues);
             builder.RegisterWebApiFilterProvider(GlobalConfiguration.Configuration);
             builder.RegisterApiControllers(Assembly.GetExecutingAssembly());
             builder.RegisterFilterProvider();

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Optimization;
 
-namespace $safeprojectname$
+namespace QuickWeb
 {
     public class BundleConfig
     {
