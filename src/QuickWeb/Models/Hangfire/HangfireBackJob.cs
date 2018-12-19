@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using Quick.Common;
+using Quick.Common.Net;
 using Quick.IService;
 using Quick.Models.Dto;
 using Quick.Models.Entity.Table;
@@ -22,7 +23,7 @@ namespace QuickWeb.Models.Hangfire
                 LoginTime = DateTime.Now,
                 LoginType = type,
                 PhysicAddress = "",
-                Province = ""
+                Province = ip.GetProvince()
             };
             UserInfo u = UserInfoService.GetByUsername(userInfo.Username);
             u.LoginRecord.Add(record);

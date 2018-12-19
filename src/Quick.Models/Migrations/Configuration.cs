@@ -1,6 +1,7 @@
 using System;
 using System.Data.Entity;
 using System.Data.Entity.Migrations;
+using System.Data.SqlClient;
 using System.Linq;
 
 namespace Quick.Models.Migrations
@@ -27,6 +28,24 @@ namespace Quick.Models.Migrations
 
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
             //  to avoid creating duplicate seed data.
+            try
+            {
+                #region Ìí¼ÓÔ¼Êø
+
+                context.Database.ExecuteSqlCommand(@"ALTER TABLE [dbo].[Post] ADD DEFAULT getdate() FOR [PostDate];
+                                                    ALTER TABLE [dbo].[Post] ADD DEFAULT getdate() FOR [ModifyDate];
+                                                    ALTER TABLE [dbo].[Post] ADD DEFAULT 0 FOR [IsFixedTop];
+                                                    ALTER TABLE [dbo].[Post] ADD DEFAULT 0 FOR [IsBanner];
+                                                    ALTER TABLE [dbo].[SystemSetting] ADD DEFAULT 1 FOR [IsAvailable];
+                                                    ALTER TABLE [dbo].[UserInfo] ADD DEFAULT 0 FOR [IsAdmin];
+                                                    ");
+
+                #endregion
+            }
+            catch (SqlException)
+            {
+
+            }
         }
     }
 }

@@ -62,6 +62,14 @@ namespace Quick.Models.Application
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
 			//base.OnModelCreating(modelBuilder);
+            //设置的表的名称是一个多元化的实体类型名称版本
+            //modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
+			// 设置EntityFramework中decimal类型数据精度
+            modelBuilder.Conventions.Add(new DecimalPrecisionAttributeConvention());
+			modelBuilder.Entity<Post>().Property(e => e.PostDate).HasPrecision(0);
+            modelBuilder.Entity<Post>().Property(e => e.ModifyDate).HasPrecision(0);
+			modelBuilder.Entity<Category>().HasMany(e => e.Post).WithRequired(e => e.Category).WillCascadeOnDelete(true);
+			modelBuilder.Entity<UserInfo>().HasMany(e => e.LoginRecord).WithRequired(e => e.UserInfo).WillCascadeOnDelete(true);
         }
 
 		//重写 SaveChanges

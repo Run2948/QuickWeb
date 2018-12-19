@@ -33,6 +33,8 @@ namespace QuickWeb.Controllers
     {
 		public ILoginRecordService LoginRecordService { get;set; }	
 
+		public ISystemSettingService SystemSettingService { get;set; }	
+
 		public IUserInfoService UserInfoService { get;set; }	
 
 	}

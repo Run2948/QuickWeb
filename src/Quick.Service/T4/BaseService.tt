@@ -2,8 +2,9 @@
 <#@ include file="MultipleOutputHelper.ttinclude" #>
 <#@ import namespace="System"#>
 <#
-	string solutionsPath = Host.ResolveAssemblyReference("$(SolutionDir)");  
-	var path = solutionsPath+@"Quick.Models\Entity\Table";
+	//string solutionsPath = Host.ResolveAssemblyReference("$(SolutionDir)"); 
+	string projectPath = Host.ResolveAssemblyReference("$(ProjectDir)"); 
+	var path = projectPath+@"..\Quick.Models\Entity\Table";
     var files = System.IO.Directory.GetFiles(path, "*.cs");
 #>
 /* ==============================================================================
