@@ -48,41 +48,11 @@ namespace $safeprojectname$.Controllers.Common
         /// <param name="msg">消息</param>
         /// <param name="get">是否允许GET请求</param>
         /// <returns></returns>
-        protected static JsonResult ConvertJsonresult(int status, string msg, ContentType contentType = ContentType.JSON, bool get = false)
+        protected static JsonResult Build(int status, string msg, ContentType contentType = ContentType.JSON, bool get = false)
         {
             JsonResult js = new JsonResult
             {
                 Data = new ResultInfo(status, msg)
-            };
-            switch (contentType)
-            {
-                case ContentType.JSON:
-                    break;
-                case ContentType.TEXT:
-                    js.ContentType = "text/html";
-                    break;
-                default:
-                    break;
-            }
-            if (get)
-                js.JsonRequestBehavior = JsonRequestBehavior.AllowGet;
-            return js;
-        }
-
-
-        /// <summary>
-        /// 返回响应状态、提示信息和跳转地址
-        /// </summary>
-        /// <param name="status">状态</param>
-        /// <param name="msg">消息</param>
-        /// <param name="url">跳转地址</param>
-        /// <param name="get">是否允许GET请求</param>
-        /// <returns></returns>
-        protected static JsonResult ConvertJsonresult(int status, string msg, string url, ContentType contentType = ContentType.JSON, bool get = false)
-        {
-            JsonResult js = new JsonResult
-            {
-                Data = new ResultInfo(status, msg, url)
             };
             switch (contentType)
             {
@@ -107,7 +77,7 @@ namespace $safeprojectname$.Controllers.Common
         /// <param name="data">数据</param>
         /// <param name="get">是否允许GET请求</param>
         /// <returns></returns>
-        protected static JsonResult ConvertJsonresult(int status, string msg, object data, ContentType contentType = ContentType.JSON, bool get = false)
+        protected static JsonResult Build(int status, string msg, object data, ContentType contentType = ContentType.JSON, bool get = false)
         {
             JsonResult js = new JsonResult
             {
@@ -127,48 +97,17 @@ namespace $safeprojectname$.Controllers.Common
                 js.JsonRequestBehavior = JsonRequestBehavior.AllowGet;
             return js;
         }
-
-        /// <summary>
-        /// 返回响应状态、消息、数据和跳转地址
-        /// </summary>
-        /// <param name="status">状态</param>
-        /// <param name="msg">信息</param>
-        /// <param name="data">数据</param>
-        /// <param name="url">跳转地址</param>
-        /// <param name="get">是否允许GET请求</param>
-        /// <returns></returns>
-        protected static JsonResult ConvertJsonresult(int status, string msg, object data, string url, ContentType contentType = ContentType.JSON, bool get = false)
-        {
-            JsonResult js = new JsonResult
-            {
-                Data = new ResultInfo(status, msg, data, url)
-            };
-            switch (contentType)
-            {
-                case ContentType.JSON:
-                    break;
-                case ContentType.TEXT:
-                    js.ContentType = "text/html";
-                    break;
-                default:
-                    break;
-            }
-            if (get)
-                js.JsonRequestBehavior = JsonRequestBehavior.AllowGet;
-            return js;
-        }
-
         /// <summary>
         /// 返回响应状态、消息、数据和跳转地址
         /// </summary>
         /// <param name="result">ResultInfo实体</param>
         /// <param name="get">是否允许GET请求</param>
         /// <returns></returns>
-        protected static JsonResult ConvertJsonresult(ResultInfo result, ContentType contentType = ContentType.JSON, bool get = false)
+        protected static JsonResult Build(ResultInfo result, ContentType contentType = ContentType.JSON, bool get = false)
         {
             JsonResult js = new JsonResult
             {
-                Data = new ResultInfo(result.Status,result.Msg,result.Data,result.Url)
+                Data = new ResultInfo(result.Status, result.Msg, result.Data)
             };
             switch (contentType)
             {
@@ -184,7 +123,65 @@ namespace $safeprojectname$.Controllers.Common
                 js.JsonRequestBehavior = JsonRequestBehavior.AllowGet;
             return js;
         }
-        
+
+        /// <summary>
+        /// 返回成功状态、消息和数据对象
+        /// </summary>
+        /// <param name="msg">信息</param>
+        /// <param name="data">数据</param>
+        /// <returns></returns>
+        protected static JsonResult Ok(string msg, object data)
+        {
+            return Build(status: 1, msg: msg, data: data, get: true);
+        }
+
+        /// <summary>
+        /// 返回成功状态和数据对象
+        /// </summary>
+        /// <param name="data">数据</param>
+        /// <returns></returns>
+        protected static JsonResult Ok(object data)
+        {
+            return Ok("Success", data: data);
+        }
+
+        /// <summary>
+        /// 返回成功状态和消息
+        /// </summary>
+        /// <param name="msg">消息</param>
+        /// <returns></returns>
+        protected static JsonResult Ok(string msg)
+        {
+            return Build(status: 1, msg: msg, get: true);
+        }
+
+        /// <summary>
+        /// 返回成功状态
+        /// </summary>
+        /// <returns></returns>
+        protected static JsonResult Ok()
+        {
+            return Ok("Success");
+        }
+
+        /// <summary>
+        /// 返回失败状态和消息
+        /// </summary>
+        /// <param name="msg">消息</param>
+        /// <returns></returns>
+        protected static JsonResult No(string msg)
+        {
+            return Build(status: 0, msg: msg, get: true);
+        }
+
+        /// <summary>
+        /// 返回失败状态
+        /// </summary>
+        /// <returns></returns>
+        protected static JsonResult No()
+        {
+            return No("Failure ");
+        }
         #endregion
 
         #region 通用返回ResultInfo的封装

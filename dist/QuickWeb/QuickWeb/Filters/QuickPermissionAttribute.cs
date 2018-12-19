@@ -1,34 +1,35 @@
-﻿using System;
+﻿using Quick.Common;
+using Quick.Common.Net;
+using Quick.Models.Dto;
+using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Web;
-using System.Web.Http;
+using System.Web.Mvc;
 
 namespace $safeprojectname$.Filters
 {
     public class QuickPermissionAttribute : AuthorizeAttribute
     {
-        /*
         protected string ControllerName = string.Empty;
 
         protected string ActionName = string.Empty;
 
         protected bool IsAjax = false;
 
-        protected bool IsDebug = ConfigurationManager.AppSettings["IsDebug"] != null && ConfigurationManager.AppSettings["IsDebug"].ToBoolean();
+        protected bool IsDebug = ConfigurationManager.AppSettings["IsDebug"] != null && bool.Parse(ConfigurationManager.AppSettings["IsDebug"]);
 
         #region Session相关
 
-        protected bool IsAdminLogin()
+        protected bool IsUserLogin()
         {
-            //return HttpContext.Current.Session.GetByRedis<AdminOutputDto>(RedisKeys.SHOP_DRUGS_ADMIN_SESSION, dbNum: 0) != null;
-            return HttpContext.Current.Session.Get<AdminOutputDto>(RedisKeys.SHOP_DRUGS_ADMIN_SESSION) != null;
+            return HttpContext.Current.Session.Get<UserInfoOutputDto>(QuickKeys.USER_SESSION) != null;
         }
 
-        protected AdminOutputDto GetAdminSession()
+        protected UserInfoOutputDto GetUserSession()
         {
-            //return HttpContext.Current.Session.GetByRedis<AdminOutputDto>(RedisKeys.SHOP_DRUGS_ADMIN_SESSION, dbNum: 0);
-            return HttpContext.Current.Session.Get<AdminOutputDto>(RedisKeys.SHOP_DRUGS_ADMIN_SESSION);
+            return HttpContext.Current.Session.Get<UserInfoOutputDto>(QuickKeys.USER_SESSION);
         }
 
         #endregion
@@ -46,14 +47,17 @@ namespace $safeprojectname$.Filters
             if (IsDebug)
                 return;
 
-            // 放过 登录页面
-            if (ControllerName.IsEqualString(QuickKeys.SHOP_DRUGS_ADMIN_LOGIN))
+            // 放过 不需要登陆的页面 (找回密码页面等等...)
+            if (filterContext.ActionDescriptor.GetCustomAttributes(typeof(AllowAnonymousAttribute), true).Length > 0)
+            {
+                filterContext.HttpContext.SkipAuthorization = true;
                 return;
+            }
 
             // 拦截 未登录用户
-            if (!IsAdminLogin())
+            if (!IsUserLogin())
             {
-                filterContext.Result = new ContentResult() { Content = QuickKeys.AdminLoginUrlString() };
+                filterContext.Result = new ContentResult() { Content = QuickKeys.USER_LOGIN };
                 return;
             }
 
@@ -67,35 +71,7 @@ namespace $safeprojectname$.Filters
         /// <returns></returns>
         protected override bool AuthorizeCore(HttpContextBase httpContext)
         {
-            // 默认 都不允许
-            bool allow = false;
-
-            // 获取 管理员账户信息
-            AdminOutputDto admin = GetAdminSession();
-
-            // 放过 超级管理所有请求权限 
-            if (admin.is_super)
-                return true;
-
-            // 拦截 普通管理员的特定权限请求
-            if (ControllerName.IsEqualString(QuickKeys.SHOP_DRUGS_SUPER_PERMISSION))
-                return false;
-
-            using (DbContext db = WebExtension.GetDbContext<DefaultDbContext>())
-            {
-                var permissions = db.Set<lbk_permissions>().AsNoTracking().FirstOrDefault(p => p.controller_name.IsEqualString(ControllerName) && p.action_name.IsEqualString(ActionName) && p.area_name.IsEqualString("Admin"));
-                // 放过 不存在权限的请求
-                if (permissions == null)
-                    allow = true;
-                // 拦截 未分配权限组的用户
-                var admin_group = db.Set<lbk_admin_group>().AsNoTracking().FirstOrDefault(g => g.id == admin.admin_gid);
-                if (admin_group == null)
-                    allow = false;
-                // 拦截 分配权限组但未授权请求权限的用户
-                else
-                    allow = CultureInfo.InvariantCulture.CompareInfo.IndexOf(admin_group.limits, $"{ControllerName}-{ActionName}") >= 0;
-                return allow;
-            }
+            return true;
         }
 
         /// <summary>
@@ -104,9 +80,7 @@ namespace $safeprojectname$.Filters
         /// <param name="filterContext"></param>
         protected override void HandleUnauthorizedRequest(AuthorizationContext filterContext)
         {
-            //base.HandleUnauthorizedRequest(filterContext);
-            filterContext.Result = new RedirectResult(QuickKeys.AdminNoPermissionUrlString());
+            base.HandleUnauthorizedRequest(filterContext);
         }
-        */
     }
 }

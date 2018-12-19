@@ -20,6 +20,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
@@ -34,6 +35,11 @@ namespace $safeprojectname$.Entity.Table
     [Table("SystemSetting")]
     public class SystemSetting : BaseEntity
     {
+        public SystemSetting()
+        {
+            IsAvailable = true;
+        }
+
         /// <summary>
         /// 参数项名
         /// </summary>
@@ -50,5 +56,11 @@ namespace $safeprojectname$.Entity.Table
         /// 描述
         /// </summary>
         public string Desc { get; set; }
+
+        /// <summary>
+        /// 是否可用
+        /// </summary>
+        [DefaultValue(true)]
+        public bool IsAvailable { get; set; }
     }
 }

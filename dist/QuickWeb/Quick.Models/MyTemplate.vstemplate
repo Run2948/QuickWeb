@@ -54,6 +54,7 @@
         <ProjectItem ReplaceParameters="false" TargetFileName="MultipleOutputHelper.ttinclude">MultipleOutputHelper.ttinclude</ProjectItem>
       </Folder>
       <Folder Name="Validation" TargetFolderName="Validation">
+        <ProjectItem ReplaceParameters="true" TargetFileName="DecimalPrecisionAttribute.cs">DecimalPrecisionAttribute.cs</ProjectItem>
         <ProjectItem ReplaceParameters="true" TargetFileName="IsEmailAttribute.cs">IsEmailAttribute.cs</ProjectItem>
         <ProjectItem ReplaceParameters="true" TargetFileName="IsIPAddressAttribute.cs">IsIPAddressAttribute.cs</ProjectItem>
         <ProjectItem ReplaceParameters="true" TargetFileName="IsPhoneAttribute.cs">IsPhoneAttribute.cs</ProjectItem>

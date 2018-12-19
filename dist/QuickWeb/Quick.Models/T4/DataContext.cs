@@ -24,6 +24,7 @@ using $safeprojectname$.Migrations;
 using System.Data.Entity;
 using System.Linq;
 using static System.Data.Entity.Core.Objects.ObjectContext;
+using $safeprojectname$.Validation;
 
 namespace $safeprojectname$.Application
 {
@@ -62,6 +63,11 @@ namespace $safeprojectname$.Application
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
 			//base.OnModelCreating(modelBuilder);
+            //设置的表的名称是一个多元化的实体类型名称版本
+            //modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
+			// 设置EntityFramework中decimal类型数据精度
+            modelBuilder.Conventions.Add(new DecimalPrecisionAttributeConvention());
+			modelBuilder.Entity<UserInfo>().HasMany(e => e.LoginRecord).WithRequired(e => e.UserInfo).WillCascadeOnDelete(true);
         }
 
 		//重写 SaveChanges

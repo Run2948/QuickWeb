@@ -25,10 +25,17 @@
       <Folder Name="Models" TargetFolderName="Models">
         <ProjectItem ReplaceParameters="true" TargetFileName="JsonNetResult.cs">JsonNetResult.cs</ProjectItem>
       </Folder>
+      <Folder Name="Net" TargetFolderName="Net">
+        <ProjectItem ReplaceParameters="true" TargetFileName="WebExtensionPro.cs">WebExtensionPro.cs</ProjectItem>
+      </Folder>
+      <Folder Name="NoSQL" TargetFolderName="NoSQL">
+        <ProjectItem ReplaceParameters="true" TargetFileName="RedisHelper.cs">RedisHelper.cs</ProjectItem>
+      </Folder>
       <ProjectItem ReplaceParameters="true" TargetFileName="packages.config">packages.config</ProjectItem>
       <Folder Name="Properties" TargetFolderName="Properties">
         <ProjectItem ReplaceParameters="true" TargetFileName="AssemblyInfo.cs">AssemblyInfo.cs</ProjectItem>
       </Folder>
+      <ProjectItem ReplaceParameters="true" TargetFileName="QuickKeys.cs">QuickKeys.cs</ProjectItem>
       <ProjectItem ReplaceParameters="true" TargetFileName="readme.txt">readme.txt</ProjectItem>
       <ProjectItem ReplaceParameters="true" TargetFileName="ServiceManager.cs">ServiceManager.cs</ProjectItem>
       <Folder Name="UEditor" TargetFolderName="UEditor">

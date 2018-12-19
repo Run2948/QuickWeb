@@ -2592,7 +2592,7 @@ namespace $safeprojectname$
         }
 
         /// <summary>
-        /// 删除实体
+        /// 删除实体并保存
         /// </summary>
         /// <param name="t">需要删除的实体</param>
         /// <returns>删除成功</returns>
