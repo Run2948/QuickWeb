@@ -32,6 +32,7 @@ using Quick.Models.Migrations;
 using System.Data.Entity;
 using System.Linq;
 using static System.Data.Entity.Core.Objects.ObjectContext;
+using Quick.Models.Validation;
 
 namespace Quick.Models.Application
 {
@@ -73,9 +74,6 @@ namespace Quick.Models.Application
             //modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
 			// 设置EntityFramework中decimal类型数据精度
             modelBuilder.Conventions.Add(new DecimalPrecisionAttributeConvention());
-			modelBuilder.Entity<Post>().Property(e => e.PostDate).HasPrecision(0);
-            modelBuilder.Entity<Post>().Property(e => e.ModifyDate).HasPrecision(0);
-			modelBuilder.Entity<Category>().HasMany(e => e.Post).WithRequired(e => e.Category).WillCascadeOnDelete(true);
 			modelBuilder.Entity<UserInfo>().HasMany(e => e.LoginRecord).WithRequired(e => e.UserInfo).WillCascadeOnDelete(true);
         }
 

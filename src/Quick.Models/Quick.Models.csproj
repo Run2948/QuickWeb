@@ -108,6 +108,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataContext.tt</DependentUpon>
     </Compile>
+    <Compile Include="Validation\DecimalPrecisionAttribute.cs" />
     <Compile Include="Validation\IsEmailAttribute.cs" />
     <Compile Include="Validation\IsIPAddressAttribute.cs" />
     <Compile Include="Validation\IsPhoneAttribute.cs" />
