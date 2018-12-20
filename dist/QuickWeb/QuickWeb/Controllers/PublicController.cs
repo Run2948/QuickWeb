@@ -1,5 +1,5 @@
 ﻿using Quick.Common;
-using QuickWeb.Controllers.Common;
+using $safeprojectname$.Controllers.Common;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +7,7 @@ using System.Text;
 using System.Web;
 using System.Web.Mvc;
 
-namespace QuickWeb.Controllers
+namespace $safeprojectname$.Controllers
 {
     public class PublicController : BusinessController
     {

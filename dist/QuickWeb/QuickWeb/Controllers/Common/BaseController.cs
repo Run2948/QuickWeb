@@ -13,7 +13,7 @@ using System.Text;
 using System.Web;
 using System.Web.Mvc;
 
-namespace QuickWeb.Controllers.Common
+namespace $safeprojectname$.Controllers.Common
 {
     /// <summary>
     /// 基类控制器
