@@ -32,7 +32,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace $safeprojectname$.Controllers
+namespace QuickWeb.Controllers
 {
     /// <summary>
     /// 不使用构造函数注入的属性，必须是共有成员属性(public)，不能是私有或受保护的成员属性

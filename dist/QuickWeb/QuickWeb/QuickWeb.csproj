@@ -173,6 +173,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Data\ban.txt" />
+    <Content Include="App_Data\denyareaip.txt" />
+    <Content Include="App_Data\denyip.txt" />
+    <Content Include="App_Data\DenyIPRange.txt" />
+    <Content Include="App_Data\mod.txt" />
     <Content Include="App_Data\template\broadcast.html" />
     <Content Include="App_Data\template\bugfeed.html" />
     <Content Include="App_Data\template\bugreport.html" />
@@ -180,6 +184,7 @@
     <Content Include="App_Data\template\notify.html" />
     <Content Include="App_Data\template\publish.html" />
     <Content Include="App_Data\template\subscribe.html" />
+    <Content Include="App_Data\whitelist.txt" />
     <Content Include="Assets\ueditor\dialogs\anchor\anchor.html" />
     <Content Include="Assets\ueditor\dialogs\attachment\attachment.css" />
     <Content Include="Assets\ueditor\dialogs\attachment\attachment.html" />
@@ -510,6 +515,7 @@
     <Compile Include="Controllers\Common\BaseController.cs" />
     <Compile Include="Controllers\Common\BusinessController.cs" />
     <Compile Include="Controllers\Common\UserBaseController.cs" />
+    <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\PublicController.cs" />
     <Compile Include="Controllers\T4\TempController.cs">
       <AutoGen>True</AutoGen>
@@ -569,6 +575,10 @@
     <Content Include="Config\connectionStrings.config" />
     <None Include="packages.config" />
     <Content Include="upload.ashx" />
+    <Content Include="Views\Error\AccessNoRight.cshtml" />
+    <Content Include="Views\Error\PageNotFound.cshtml" />
+    <Content Include="Views\Error\ServerError.cshtml" />
+    <Content Include="Views\Error\ServiceUnavailable.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -587,6 +597,10 @@
       <Project>{e080fde1-20ac-4f11-bf48-6e85b21649dc}</Project>
       <Name>Quick.Common</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Quick.IRepository\Quick.IRepository.csproj">
+      <Project>{84f07198-a80c-43d3-a8c9-0051b615cf1d}</Project>
+      <Name>Quick.IRepository</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Quick.IService\Quick.IService.csproj">
       <Project>{d6151ede-69fd-478d-8180-f89718fc2cd2}</Project>
       <Name>Quick.IService</Name>
@@ -594,6 +608,14 @@
     <ProjectReference Include="..\Quick.Models\Quick.Models.csproj">
       <Project>{e4b57cfa-07b1-40b1-a5de-3deac53902e3}</Project>
       <Name>Quick.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Quick.Repository\Quick.Repository.csproj">
+      <Project>{dfb4a254-1b0e-4388-b8a9-be837789bf18}</Project>
+      <Name>Quick.Repository</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Quick.Service\Quick.Service.csproj">
+      <Project>{12f285b2-8ef5-4706-bc89-643c5627d548}</Project>
+      <Name>Quick.Service</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

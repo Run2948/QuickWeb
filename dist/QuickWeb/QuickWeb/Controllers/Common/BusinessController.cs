@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace $safeprojectname$.Controllers.Common
+namespace QuickWeb.Controllers.Common
 {
     /// <summary>
     /// 业务控制器

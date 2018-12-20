@@ -8,7 +8,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace $safeprojectname$.Controllers.Common
+namespace QuickWeb.Controllers.Common
 {
     public class UserBaseController : BusinessController
     {

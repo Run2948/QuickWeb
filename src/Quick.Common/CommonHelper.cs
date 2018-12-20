@@ -20,13 +20,16 @@
 
 using EFSecondLevelCache;
 using Masuit.Tools;
+using Masuit.Tools.Logging;
 using Masuit.Tools.Media;
 using Masuit.Tools.Models;
 using Masuit.Tools.NoSQL;
 using Masuit.Tools.Security;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using Quick.Models.Application;
 using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Configuration;
 using System.IO;
@@ -45,6 +48,73 @@ namespace Quick.Common
     /// </summary>
     public static class CommonHelper
     {
+        static CommonHelper()
+        {
+            BanRegex = File.ReadAllText(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "App_Data", "ban.txt"));
+            ModRegex = File.ReadAllText(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "App_Data", "mod.txt"));
+            DenyIP = File.ReadAllText(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "App_Data", "denyip.txt"));
+            DenyAreaIP = JsonConvert.DeserializeObject<ConcurrentDictionary<string, HashSet<string>>>(File.ReadAllText(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "App_Data", "denyareaip.txt")));
+            string[] lines = File.ReadAllLines(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "App_Data", "DenyIPRange.txt"));
+            DenyIPRange = new Dictionary<string, string>();
+            foreach (string line in lines)
+            {
+                try
+                {
+                    var strs = line.Split(' ');
+                    DenyIPRange[strs[0]] = strs[1];
+                }
+                catch (IndexOutOfRangeException e)
+                {
+                    LogManager.Debug("索引超出范围", e.Message);
+                }
+            }
+            IPWhiteList = File.ReadAllText(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "App_Data", "whitelist.txt")).Split(',', '，');
+        }
+
+        /// <summary>
+        /// 敏感词
+        /// </summary>
+        public static string BanRegex { get; set; }
+
+        /// <summary>
+        /// 审核词
+        /// </summary>
+        public static string ModRegex { get; set; }
+
+        /// <summary>
+        /// 全局禁止IP
+        /// </summary>
+        public static string DenyIP { get; set; }
+
+        /// <summary>
+        /// 按地区禁用ip
+        /// </summary>
+        public static ConcurrentDictionary<string, HashSet<string>> DenyAreaIP { get; set; }
+
+        /// <summary>
+        /// 禁用ip范围
+        /// </summary>
+        public static Dictionary<string, string> DenyIPRange { get; set; }
+
+        /// <summary>
+        /// ip白名单
+        /// </summary>
+        public static IEnumerable<string> IPWhiteList { get; set; }
+
+        /// <summary>
+        /// 判断IP地址是否被黑名单
+        /// </summary>
+        /// <param name="ip"></param>
+        /// <returns></returns>
+        public static bool IsDenyIpAddress(this string ip)
+        {
+            if (IPWhiteList.Contains(ip))
+            {
+                return false;
+            }
+            return DenyAreaIP.SelectMany(x => x.Value).Union(DenyIP.Split(',')).Contains(ip) || DenyIPRange.Any(kv => kv.Key.StartsWith(ip.Split('.')[0]) && ip.IpAddressInRange(kv.Key, kv.Value));
+        }
+
         /// <summary>
         /// 类型映射
         /// </summary>
@@ -84,7 +154,7 @@ namespace Quick.Common
         public static void SetAppSettings(string key, string value)
         {
             System.Xml.XmlDocument xDoc = new System.Xml.XmlDocument();
-            xDoc.Load(HttpContext.Current.Server.MapPath("~/Web.config"));
+            xDoc.Load(HttpContext.Current.Server.MapPath("~/Config/appSettings.config"));
             System.Xml.XmlNode xNode;
             System.Xml.XmlElement xElem1;
             System.Xml.XmlElement xElem2;
@@ -145,6 +215,8 @@ namespace Quick.Common
             }.Send();
 #endif
         }
+
+        #region 上传图片到图床
 
         /// <summary>
         /// 上传图片到新浪图床
@@ -560,5 +632,7 @@ namespace Quick.Common
 
             return content;
         }
+
+        #endregion
     }
 }

@@ -18,6 +18,10 @@
       <Folder Name="App_Data" TargetFolderName="App_Data">
         <ProjectItem ReplaceParameters="true" TargetFileName="ban.txt">ban.txt</ProjectItem>
         <ProjectItem ReplaceParameters="true" TargetFileName="config.json">config.json</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="denyareaip.txt">denyareaip.txt</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="denyip.txt">denyip.txt</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="DenyIPRange.txt">DenyIPRange.txt</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="mod.txt">mod.txt</ProjectItem>
         <Folder Name="template" TargetFolderName="template">
           <ProjectItem ReplaceParameters="true" TargetFileName="broadcast.html">broadcast.html</ProjectItem>
           <ProjectItem ReplaceParameters="true" TargetFileName="bugfeed.html">bugfeed.html</ProjectItem>
@@ -27,6 +31,7 @@
           <ProjectItem ReplaceParameters="true" TargetFileName="publish.html">publish.html</ProjectItem>
           <ProjectItem ReplaceParameters="true" TargetFileName="subscribe.html">subscribe.html</ProjectItem>
         </Folder>
+        <ProjectItem ReplaceParameters="true" TargetFileName="whitelist.txt">whitelist.txt</ProjectItem>
       </Folder>
       <Folder Name="App_Start" TargetFolderName="App_Start">
         <ProjectItem ReplaceParameters="true" TargetFileName="AutofacConfig.cs">AutofacConfig.cs</ProjectItem>
@@ -506,6 +511,7 @@
           <ProjectItem ReplaceParameters="true" TargetFileName="BusinessController.cs">BusinessController.cs</ProjectItem>
           <ProjectItem ReplaceParameters="true" TargetFileName="UserBaseController.cs">UserBaseController.cs</ProjectItem>
         </Folder>
+        <ProjectItem ReplaceParameters="true" TargetFileName="ErrorController.cs">ErrorController.cs</ProjectItem>
         <ProjectItem ReplaceParameters="true" TargetFileName="PublicController.cs">PublicController.cs</ProjectItem>
         <Folder Name="T4" TargetFolderName="T4">
           <ProjectItem ReplaceParameters="false" TargetFileName="MultipleOutputHelper.ttinclude">MultipleOutputHelper.ttinclude</ProjectItem>
@@ -539,6 +545,12 @@
       <ProjectItem ReplaceParameters="true" TargetFileName="upload.ashx">upload.ashx</ProjectItem>
       <ProjectItem ReplaceParameters="true" TargetFileName="upload.ashx.cs">upload.ashx.cs</ProjectItem>
       <Folder Name="Views" TargetFolderName="Views">
+        <Folder Name="Error" TargetFolderName="Error">
+          <ProjectItem ReplaceParameters="true" TargetFileName="AccessNoRight.cshtml">AccessNoRight.cshtml</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="PageNotFound.cshtml">PageNotFound.cshtml</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="ServerError.cshtml">ServerError.cshtml</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="ServiceUnavailable.cshtml">ServiceUnavailable.cshtml</ProjectItem>
+        </Folder>
         <ProjectItem ReplaceParameters="true" TargetFileName="web.config">web.config</ProjectItem>
       </Folder>
       <ProjectItem ReplaceParameters="true" TargetFileName="Web.config">Web.config</ProjectItem>

@@ -6,7 +6,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace $safeprojectname$
+namespace QuickWeb
 {
     public class StartupConfig
     {

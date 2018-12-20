@@ -1,13 +1,13 @@
 using System.Web.Http;
 using WebActivatorEx;
-using $safeprojectname$;
+using QuickWeb;
 using Swashbuckle.Application;
 using System;
 using System.IO;
 
 [assembly: PreApplicationStartMethod(typeof(SwaggerConfig), "Register")]
 
-namespace $safeprojectname$
+namespace QuickWeb
 {
     public class SwaggerConfig
     {
@@ -34,7 +34,7 @@ namespace $safeprojectname$
                         // hold additional metadata for an API. Version and title are required but you can also provide
                         // additional fields by chaining methods off SingleApiVersion.
                         //
-                        c.SingleApiVersion("v1", "$safeprojectname$");
+                        c.SingleApiVersion("v1", "QuickWeb");
 
                         // If you want the output Swagger docs to be indented properly, enable the "PrettyPrint" option.
                         //
@@ -104,7 +104,7 @@ namespace $safeprojectname$
                         // more Xml comment files.
                         //
                         //c.IncludeXmlComments(GetXmlCommentsPath());
-                        c.IncludeXmlComments(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "bin", "$safeprojectname$.xml"));
+                        c.IncludeXmlComments(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "bin", "QuickWeb.xml"));
                         c.IncludeXmlComments(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "bin", "Quick.Models.xml"));
                         c.IncludeXmlComments(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "bin", "Masuit.Tools.xml"));
 
