@@ -31,7 +31,7 @@ namespace Quick.Models.Application
     public class DataContext : DbContext
     {
         public DataContext() :
-            base("name=DataContext")
+            base(DbProvider.GetDataBaseProvider())
         {
             Database.CreateIfNotExists();
             Database.SetInitializer(new MigrateDatabaseToLatestVersion<DataContext, Configuration>());

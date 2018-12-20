@@ -75,6 +75,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.IO.Compression" />
     <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
@@ -91,6 +92,7 @@
     <Compile Include="Common\PageRequest.cs" />
     <Compile Include="Common\ResultInfo.cs" />
     <Compile Include="Common\SessionKey.cs" />
+    <Compile Include="DbProvider.cs" />
     <Compile Include="Dto\BaseDto.cs" />
     <Compile Include="Dto\UserInfoInputDto.cs" />
     <Compile Include="Dto\UserInfoOutputDto.cs" />

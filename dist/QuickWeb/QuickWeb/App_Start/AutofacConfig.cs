@@ -5,7 +5,7 @@ using Hangfire;
 using Masuit.Tools.NoSQL;
 using Quick.Common;
 using Quick.Models.Application;
-using QuickWeb.Models.Hangfire;
+using $safeprojectname$.Models.Hangfire;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,7 +13,7 @@ using System.Reflection;
 using System.Web.Mvc;
 using GlobalConfiguration = System.Web.Http.GlobalConfiguration;
 
-namespace QuickWeb
+namespace $safeprojectname$
 {
     /// <summary>
     /// Autofac配置类

@@ -11,7 +11,7 @@ using Masuit.Tools.Logging;
 using System.Web.Optimization;
 using Z.EntityFramework.Extensions;
 
-namespace QuickWeb
+namespace $safeprojectname$
 {
     public class Global : HttpApplication
     {

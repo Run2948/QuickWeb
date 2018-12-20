@@ -565,6 +565,8 @@
     <Content Include="Assets\ueditor\third-party\video-js\font\vjs.ttf" />
     <Content Include="Assets\ueditor\third-party\video-js\font\vjs.woff" />
     <Content Include="Controllers\T4\MultipleOutputHelper.ttinclude" />
+    <Content Include="Config\appSettings.config" />
+    <Content Include="Config\connectionStrings.config" />
     <None Include="packages.config" />
     <Content Include="upload.ashx" />
     <None Include="Web.Debug.config">

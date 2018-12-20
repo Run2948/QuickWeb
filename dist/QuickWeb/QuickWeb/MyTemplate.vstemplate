@@ -496,6 +496,10 @@
           <ProjectItem ReplaceParameters="true" TargetFileName="ueditor.parse.min.js">ueditor.parse.min.js</ProjectItem>
         </Folder>
       </Folder>
+      <Folder Name="Config" TargetFolderName="Config">
+        <ProjectItem ReplaceParameters="true" TargetFileName="appSettings.config">appSettings.config</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="connectionStrings.config">connectionStrings.config</ProjectItem>
+      </Folder>
       <Folder Name="Controllers" TargetFolderName="Controllers">
         <Folder Name="Common" TargetFolderName="Common">
           <ProjectItem ReplaceParameters="true" TargetFileName="BaseController.cs">BaseController.cs</ProjectItem>

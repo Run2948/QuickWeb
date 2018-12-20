@@ -21,6 +21,7 @@
 using EFSecondLevelCache;
 using Quick.IRepository;
 using Quick.IService;
+using Quick.Models;
 using SqlSugar;
 using System;
 using System.Collections.Generic;
@@ -32,7 +33,7 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Quick.Service
+namespace $safeprojectname$
 {
     /// <summary>
     /// 业务层基类
@@ -44,24 +45,24 @@ namespace Quick.Service
         /// <summary>
         /// 初始化ConnectionConfig对象
         /// </summary>
-        //private ConnectionConfig SqlSugarConnectionConfig => new ConnectionConfig()
-        //{
-        //    ConnectionString = BaseRepository.GetConnection().ConnectionString,
-        //    DbType = DbType.SqlServer,
-        //    InitKeyType = InitKeyType.Attribute,//从特性读取主键和自增列信息
-        //    IsAutoCloseConnection = true,//开启自动释放模式和EF原理一样我就不多解释了
-        //};
+        private ConnectionConfig SqlSugarConnectionConfig => new ConnectionConfig()
+        {
+            ConnectionString = DbProvider.GetDbConStr(),
+            DbType = DbType.SqlServer,
+            InitKeyType = InitKeyType.Attribute,//从特性读取主键和自增列信息
+            IsAutoCloseConnection = true,//开启自动释放模式和EF原理一样我就不多解释了
+        };
 
         public BaseService()
         {
-            //DbClient = new SqlSugarClient(SqlSugarConnectionConfig);
+            DbClient = new SqlSugarClient(SqlSugarConnectionConfig);
 #if DEBUG
             //调式代码 用来打印SQL 
-            //DbClient.Aop.OnLogExecuting = (sql, pars) =>
-            //{
-            //    Console.WriteLine(sql + "\r\n" + DbClient.Utilities.SerializeObject(pars.ToDictionary(it => it.ParameterName, it => it.Value)));
-            //    Console.WriteLine();
-            //};
+            DbClient.Aop.OnLogExecuting = (sql, pars) =>
+            {
+                Console.WriteLine(sql + "\r\n" + DbClient.Utilities.SerializeObject(pars.ToDictionary(it => it.ParameterName, it => it.Value)));
+                Console.WriteLine();
+            };
 #endif
         }
 
@@ -76,7 +77,7 @@ namespace Quick.Service
         /// <summary>
         /// 用来处理事务多表查询和复杂的操作
         /// </summary>
-        //public SqlSugarClient DbClient;
+        public SqlSugarClient DbClient;
 
         #endregion
 
@@ -87,8 +88,7 @@ namespace Quick.Service
         /// <returns></returns>
         public SqlSugarClient SugarClient()
         {
-            return null;
-            //return DbClient;
+            return DbClient;
         }
     }
 }

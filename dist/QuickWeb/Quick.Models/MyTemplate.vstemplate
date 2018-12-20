@@ -21,6 +21,7 @@
         <ProjectItem ReplaceParameters="true" TargetFileName="ResultInfo.cs">ResultInfo.cs</ProjectItem>
         <ProjectItem ReplaceParameters="true" TargetFileName="SessionKey.cs">SessionKey.cs</ProjectItem>
       </Folder>
+      <ProjectItem ReplaceParameters="true" TargetFileName="DbProvider.cs">DbProvider.cs</ProjectItem>
       <Folder Name="Dto" TargetFolderName="Dto">
         <ProjectItem ReplaceParameters="true" TargetFileName="BaseDto.cs">BaseDto.cs</ProjectItem>
         <ProjectItem ReplaceParameters="true" TargetFileName="UserInfoInputDto.cs">UserInfoInputDto.cs</ProjectItem>
