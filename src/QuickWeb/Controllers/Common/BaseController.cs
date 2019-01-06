@@ -959,5 +959,32 @@ namespace QuickWeb.Controllers.Common
         }
         #endregion
 
+        #region 从前台获取标签的值
+        /// <summary>
+        /// 从前台获取标签的值
+        /// </summary>
+        /// <param name="tagName"></param>
+        /// <returns></returns>
+        protected string GetStringValueFromWeb(string tagName)
+        {
+            string strValue;
+
+            if ((strValue = (Request.Form[tagName ?? ""] ?? "").Trim()) != "")
+            {
+                return strValue;
+            }
+
+            if ((strValue = (Request.Params[tagName ?? ""] ?? "").Trim()) != "")
+            {
+                return strValue;
+            }
+
+            if ((strValue = (Request.QueryString[tagName ?? ""] ?? "").Trim()) != "")
+            {
+                return strValue;
+            }
+            return "";
+        }
+        #endregion
     }
 }

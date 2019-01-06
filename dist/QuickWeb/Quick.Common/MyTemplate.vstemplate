@@ -20,6 +20,9 @@
       <ProjectItem ReplaceParameters="true" TargetFileName="AutoMapperConfig.cs">AutoMapperConfig.cs</ProjectItem>
       <ProjectItem ReplaceParameters="true" TargetFileName="CommonHelper.cs">CommonHelper.cs</ProjectItem>
       <ProjectItem ReplaceParameters="true" TargetFileName="DrawingSecurityCode.cs">DrawingSecurityCode.cs</ProjectItem>
+      <Folder Name="Extension" TargetFolderName="Extension">
+        <ProjectItem ReplaceParameters="true" TargetFileName="ModelStateExtension.cs">ModelStateExtension.cs</ProjectItem>
+      </Folder>
       <ProjectItem ReplaceParameters="true" TargetFileName="HangfireHelper.cs">HangfireHelper.cs</ProjectItem>
       <ProjectItem ReplaceParameters="true" TargetFileName="JsonHelper.cs">JsonHelper.cs</ProjectItem>
       <Folder Name="Models" TargetFolderName="Models">
@@ -37,17 +40,10 @@
       </Folder>
       <ProjectItem ReplaceParameters="true" TargetFileName="QuickKeys.cs">QuickKeys.cs</ProjectItem>
       <ProjectItem ReplaceParameters="true" TargetFileName="readme.txt">readme.txt</ProjectItem>
-      <ProjectItem ReplaceParameters="true" TargetFileName="ServiceManager.cs">ServiceManager.cs</ProjectItem>
-      <Folder Name="UEditor" TargetFolderName="UEditor">
-        <ProjectItem ReplaceParameters="true" TargetFileName="Config.cs">Config.cs</ProjectItem>
-        <ProjectItem ReplaceParameters="true" TargetFileName="ConfigHandler.cs">ConfigHandler.cs</ProjectItem>
-        <ProjectItem ReplaceParameters="true" TargetFileName="CrawlerHandler.cs">CrawlerHandler.cs</ProjectItem>
-        <ProjectItem ReplaceParameters="true" TargetFileName="Handler.cs">Handler.cs</ProjectItem>
-        <ProjectItem ReplaceParameters="true" TargetFileName="ListFileManager.cs">ListFileManager.cs</ProjectItem>
-        <ProjectItem ReplaceParameters="true" TargetFileName="NotSupportedHandler.cs">NotSupportedHandler.cs</ProjectItem>
-        <ProjectItem ReplaceParameters="true" TargetFileName="PathFormatter.cs">PathFormatter.cs</ProjectItem>
-        <ProjectItem ReplaceParameters="true" TargetFileName="UploadHandler.cs">UploadHandler.cs</ProjectItem>
+      <Folder Name="Security" TargetFolderName="Security">
+        <ProjectItem ReplaceParameters="true" TargetFileName="Encrypt.cs">Encrypt.cs</ProjectItem>
       </Folder>
+      <ProjectItem ReplaceParameters="true" TargetFileName="ServiceManager.cs">ServiceManager.cs</ProjectItem>
     </Project>
   </TemplateContent>
 </VSTemplate>

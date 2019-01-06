@@ -98,6 +98,7 @@
     <Compile Include="AutoMapperConfig.cs" />
     <Compile Include="CommonHelper.cs" />
     <Compile Include="DrawingSecurityCode.cs" />
+    <Compile Include="Extension\ModelStateExtension.cs" />
     <Compile Include="HangfireHelper.cs" />
     <Compile Include="JsonHelper.cs" />
     <Compile Include="Models\JsonNetResult.cs" />
@@ -105,15 +106,8 @@
     <Compile Include="NoSQL\RedisHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QuickKeys.cs" />
+    <Compile Include="Security\Encrypt.cs" />
     <Compile Include="ServiceManager.cs" />
-    <Compile Include="UEditor\Config.cs" />
-    <Compile Include="UEditor\ConfigHandler.cs" />
-    <Compile Include="UEditor\CrawlerHandler.cs" />
-    <Compile Include="UEditor\Handler.cs" />
-    <Compile Include="UEditor\ListFileManager.cs" />
-    <Compile Include="UEditor\NotSupportedHandler.cs" />
-    <Compile Include="UEditor\PathFormatter.cs" />
-    <Compile Include="UEditor\UploadHandler.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

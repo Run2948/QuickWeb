@@ -33,10 +33,17 @@ namespace Quick.Models.Validation
     /// </summary>
     public class IsIPAddressAttribute : ValidationAttribute
     {
+        /// <summary>
+        /// 是否允许为空
+        /// </summary>
+        public bool AllowEmpty { get; set; } = false;
+
         public override bool IsValid(object value)
         {
             if (value is null)
             {
+                if (AllowEmpty) return true;
+
                 ErrorMessage = "IP地址不能为空！";
                 return false;
             }

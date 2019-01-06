@@ -33,10 +33,22 @@ namespace $safeprojectname$.Validation
     /// </summary>
     public class IsEmailAttribute : ValidationAttribute
     {
+        public IsEmailAttribute()
+        {
+            AllowEmpty = false;
+        }
+
+        /// <summary>
+        /// 是否允许为空
+        /// </summary>
+        public bool AllowEmpty { get; set; }
+
         public override bool IsValid(object value)
         {
             if (value == null)
             {
+                if (AllowEmpty) return true;
+
                 ErrorMessage = "邮箱不能为空！";
                 return false;
             }

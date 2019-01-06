@@ -33,10 +33,17 @@ namespace Quick.Models.Validation
     /// </summary>
     public class IsWebUrlAttribute : ValidationAttribute
     {
+        /// <summary>
+        /// 是否允许为空
+        /// </summary>
+        public bool AllowEmpty { get; set; } = false;
+
         public override bool IsValid(object value)
         {
             if (value == null)
             {
+                if (AllowEmpty) return true;
+
                 ErrorMessage = "网址不能为空！";
                 return false;
             }
@@ -58,6 +65,7 @@ namespace Quick.Models.Validation
                 return true;
             }
             ErrorMessage = "您输入的网址格式不正确！";
+
             return false;
         }
     }

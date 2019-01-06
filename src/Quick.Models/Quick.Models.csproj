@@ -89,14 +89,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Application\DataContext.cs" />
+    <Compile Include="Common\DbProvider.cs" />
     <Compile Include="Common\PageRequest.cs" />
     <Compile Include="Common\ResultInfo.cs" />
     <Compile Include="Common\SessionKey.cs" />
-    <Compile Include="DbProvider.cs" />
     <Compile Include="Dto\BaseDto.cs" />
     <Compile Include="Dto\UserInfoInputDto.cs" />
     <Compile Include="Dto\UserInfoOutputDto.cs" />
     <Compile Include="Entity\BaseEntity.cs" />
+    <Compile Include="Entity\GeneratedId.cs" />
     <Compile Include="Entity\Table\LoginRecord.cs" />
     <Compile Include="Entity\Table\SystemSetting.cs" />
     <Compile Include="Entity\Table\UserInfo.cs" />

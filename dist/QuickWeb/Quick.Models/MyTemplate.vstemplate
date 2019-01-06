@@ -16,12 +16,15 @@
   <TemplateContent>
     <Project TargetFileName="Quick.Models.csproj" File="Quick.Models.csproj" ReplaceParameters="true">
       <ProjectItem ReplaceParameters="true" TargetFileName="App.config">App.config</ProjectItem>
+      <Folder Name="Application" TargetFolderName="Application">
+        <ProjectItem ReplaceParameters="true" TargetFileName="DataContext.cs">DataContext.cs</ProjectItem>
+      </Folder>
       <Folder Name="Common" TargetFolderName="Common">
+        <ProjectItem ReplaceParameters="true" TargetFileName="DbProvider.cs">DbProvider.cs</ProjectItem>
         <ProjectItem ReplaceParameters="true" TargetFileName="PageRequest.cs">PageRequest.cs</ProjectItem>
         <ProjectItem ReplaceParameters="true" TargetFileName="ResultInfo.cs">ResultInfo.cs</ProjectItem>
         <ProjectItem ReplaceParameters="true" TargetFileName="SessionKey.cs">SessionKey.cs</ProjectItem>
       </Folder>
-      <ProjectItem ReplaceParameters="true" TargetFileName="DbProvider.cs">DbProvider.cs</ProjectItem>
       <Folder Name="Dto" TargetFolderName="Dto">
         <ProjectItem ReplaceParameters="true" TargetFileName="BaseDto.cs">BaseDto.cs</ProjectItem>
         <ProjectItem ReplaceParameters="true" TargetFileName="UserInfoInputDto.cs">UserInfoInputDto.cs</ProjectItem>
@@ -29,6 +32,7 @@
       </Folder>
       <Folder Name="Entity" TargetFolderName="Entity">
         <ProjectItem ReplaceParameters="true" TargetFileName="BaseEntity.cs">BaseEntity.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="GeneratedId.cs">GeneratedId.cs</ProjectItem>
         <Folder Name="Table" TargetFolderName="Table">
           <ProjectItem ReplaceParameters="true" TargetFileName="LoginRecord.cs">LoginRecord.cs</ProjectItem>
           <ProjectItem ReplaceParameters="true" TargetFileName="SystemSetting.cs">SystemSetting.cs</ProjectItem>
