@@ -15,7 +15,7 @@ using Masuit.Tools;
 using System.Configuration;
 using Quick.Common;
 
-namespace $safeprojectname$
+namespace QuickWeb
 {
     public class Global : HttpApplication
     {
@@ -38,8 +38,6 @@ namespace $safeprojectname$
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             // Bundles注册
             //BundleConfig.RegisterBundles(BundleTable.Bundles);
-            // Autofac注册
-            AutofacConfig.Register();
             // 其他配置
             StartupConfig.Startup();
         }
