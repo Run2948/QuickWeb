@@ -3043,28 +3043,6 @@ namespace Quick.Repository
         /// 根据条件更新实体
         /// </summary>
         /// <param name="where">查询条件</param>
-        /// <param name="t">更新后的实体</param>
-        /// <returns>更新成功</returns>
-        public virtual int UpdateEntity(Expression<Func<T, bool>> @where, T t)
-        {
-            return DataContext.Set<T>().Where(@where).Update(ts => t);
-        }
-
-        /// <summary>
-        /// 根据条件更新实体（异步）
-        /// </summary>
-        /// <param name="where">查询条件</param>
-        /// <param name="t">更新后的实体</param>
-        /// <returns>更新成功</returns>
-        public virtual async Task<int> UpdateEntityAsync(Expression<Func<T, bool>> @where, T t)
-        {
-            return await DataContext.Set<T>().Where(@where).UpdateAsync(ts => t).ConfigureAwait(true);
-        }
-
-        /// <summary>
-        /// 根据条件更新实体
-        /// </summary>
-        /// <param name="where">查询条件</param>
         /// <param name="do">待更新的实体属性</param>
         /// <returns></returns>
         public virtual int Update(Expression<Func<T, bool>> @where, Expression<Func<T, T>> @do)

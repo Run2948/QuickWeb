@@ -29,7 +29,7 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace $safeprojectname$
+namespace Quick.IRepository
 {
     public partial interface IBaseRepository<T> :IDisposable where T : class, new()
     {
@@ -2003,22 +2003,6 @@ namespace $safeprojectname$
         /// <param name="t">更新后的实体</param>
         /// <returns>更新成功</returns>
         bool UpdateEntity(T t);
-
-        /// <summary>
-        /// 根据条件更新实体
-        /// </summary>
-        /// <param name="where">查询条件</param>
-        /// <param name="t">更新后的实体</param>
-        /// <returns>更新成功</returns>
-        int UpdateEntity(Expression<Func<T, bool>> @where, T t);
-
-        /// <summary>
-        /// 根据条件更新实体（异步）
-        /// </summary>
-        /// <param name="where">查询条件</param>
-        /// <param name="t">更新后的实体</param>
-        /// <returns>更新成功</returns>
-        Task<int> UpdateEntityAsync(Expression<Func<T, bool>> @where, T t);
 
         /// <summary>
         /// 根据条件更新实体
