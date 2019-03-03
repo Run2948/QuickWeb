@@ -18,9 +18,9 @@
 * ==============================================================================*/
 
 using EFSecondLevelCache;
-using Quick.Models.Entity.Table;
 using Quick.IRepository;
 using Quick.IService;
+using Quick.Models.Entity.Table;
 using System;
 using System.Collections.Generic;
 using System.Data.Common;
@@ -28,7 +28,6 @@ using System.Data.Entity.Infrastructure;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Linq.Expressions;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace Quick.Service

@@ -19,14 +19,13 @@
 
 using AutoMapper;
 using EFSecondLevelCache;
-using Quick.Models.Entity.Table;
 using EntityFramework.Caching;
 using EntityFramework.Extensions;
-using Masuit.Tools;
 using Masuit.Tools.Net;
 using Masuit.Tools.Systems;
 using Quick.IRepository;
 using Quick.Models.Application;
+using Quick.Models.Entity.Table;
 using System;
 using System.Collections.Generic;
 using System.Data.Common;
@@ -36,7 +35,6 @@ using System.Data.Entity.Migrations;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Linq.Expressions;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace Quick.Repository

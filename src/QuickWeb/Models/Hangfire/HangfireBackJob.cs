@@ -6,8 +6,8 @@ using Quick.Common;
 using Quick.Common.Net;
 using Quick.IService;
 using Quick.Models.Dto;
+using Quick.Models.Entity.Enum;
 using Quick.Models.Entity.Table;
-using Quick.Models.Enum;
 
 namespace QuickWeb.Models.Hangfire
 {

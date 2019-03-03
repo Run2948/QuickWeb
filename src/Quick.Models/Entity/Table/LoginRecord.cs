@@ -17,14 +17,13 @@
 * ==============================================================================*/
 
 
-
-using Quick.Models.Enum;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Quick.Models.Entity.Enum;
 
 namespace Quick.Models.Entity.Table
 {
