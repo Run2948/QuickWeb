@@ -46,26 +46,32 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
-    <Reference Include="Hangfire.Core, Version=1.6.21.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Hangfire.Core.1.6.21\lib\net45\Hangfire.Core.dll</HintPath>
+    <Reference Include="Hangfire.Core, Version=1.6.22.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Hangfire.Core.1.6.22\lib\net45\Hangfire.Core.dll</HintPath>
     </Reference>
-    <Reference Include="Hangfire.SqlServer, Version=1.6.21.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Hangfire.SqlServer.1.6.21\lib\net45\Hangfire.SqlServer.dll</HintPath>
+    <Reference Include="Hangfire.SqlServer, Version=1.6.22.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Hangfire.SqlServer.1.6.22\lib\net45\Hangfire.SqlServer.dll</HintPath>
     </Reference>
-    <Reference Include="HtmlSanitizer, Version=3.0.0.0, Culture=neutral, PublicKeyToken=61c49a1a9e79cc28, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\HtmlSanitizer.4.0.199\lib\net45\HtmlSanitizer.dll</HintPath>
+    <Reference Include="HtmlSanitizer, Version=4.0.0.0, Culture=neutral, PublicKeyToken=61c49a1a9e79cc28, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\HtmlSanitizer.4.0.207\lib\net45\HtmlSanitizer.dll</HintPath>
     </Reference>
-    <Reference Include="ICSharpCode.SharpZipLib, Version=1.0.0.999, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\SharpZipLib.1.0.0\lib\net45\ICSharpCode.SharpZipLib.dll</HintPath>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=1.1.0.145, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\SharpZipLib.1.1.0\lib\net45\ICSharpCode.SharpZipLib.dll</HintPath>
     </Reference>
-    <Reference Include="Masuit.Tools, Version=2.1.4.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Masuit.Tools.2.1.4\lib\net45\Masuit.Tools.dll</HintPath>
+    <Reference Include="Masuit.Tools, Version=2.2.4.1, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Masuit.Tools.2.2.4.2\lib\net45\Masuit.Tools.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Newtonsoft.Json.12.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="RestSharp, Version=105.2.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\RestSharp.105.2.3\lib\net46\RestSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpCompress, Version=0.23.0.0, Culture=neutral, PublicKeyToken=afb0a02973931d96, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\SharpCompress.0.23.0\lib\net45\SharpCompress.dll</HintPath>
     </Reference>
     <Reference Include="StackExchange.Redis, Version=1.2.6.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\StackExchange.Redis.1.2.6\lib\net46\StackExchange.Redis.dll</HintPath>
@@ -83,8 +89,8 @@
     </Reference>
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Extensions" />
-    <Reference Include="System.Web.Mvc, Version=5.2.6.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Microsoft.AspNet.Mvc.5.2.6\lib\net45\System.Web.Mvc.dll</HintPath>
+    <Reference Include="System.Web.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
     </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -97,17 +103,22 @@
     <Compile Include="Assemblies.cs" />
     <Compile Include="AutoMapperConfig.cs" />
     <Compile Include="CommonHelper.cs" />
-    <Compile Include="DrawingSecurityCode.cs" />
+    <Compile Include="Config.cs" />
+    <Compile Include="Models\PageRequest.cs" />
+    <Compile Include="Models\ResultInfo.cs" />
+    <Compile Include="Security\DrawingSecurityCode.cs" />
     <Compile Include="Extension\ModelStateExtension.cs" />
     <Compile Include="HangfireHelper.cs" />
-    <Compile Include="JsonHelper.cs" />
+    <Compile Include="Strings\JsonHelper.cs" />
     <Compile Include="Models\JsonNetResult.cs" />
+    <Compile Include="Net\Mime\ContentType.cs" />
     <Compile Include="Net\WebExtensionPro.cs" />
     <Compile Include="NoSQL\RedisHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QuickKeys.cs" />
     <Compile Include="Security\Encrypt.cs" />
     <Compile Include="ServiceManager.cs" />
+    <Compile Include="Tools\RestApi.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
@@ -122,5 +133,6 @@
   <ItemGroup>
     <Content Include="readme.txt" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

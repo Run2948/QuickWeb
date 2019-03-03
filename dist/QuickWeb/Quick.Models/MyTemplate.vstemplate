@@ -21,9 +21,6 @@
       </Folder>
       <Folder Name="Common" TargetFolderName="Common">
         <ProjectItem ReplaceParameters="true" TargetFileName="DbProvider.cs">DbProvider.cs</ProjectItem>
-        <ProjectItem ReplaceParameters="true" TargetFileName="PageRequest.cs">PageRequest.cs</ProjectItem>
-        <ProjectItem ReplaceParameters="true" TargetFileName="ResultInfo.cs">ResultInfo.cs</ProjectItem>
-        <ProjectItem ReplaceParameters="true" TargetFileName="SessionKey.cs">SessionKey.cs</ProjectItem>
       </Folder>
       <Folder Name="Dto" TargetFolderName="Dto">
         <ProjectItem ReplaceParameters="true" TargetFileName="BaseDto.cs">BaseDto.cs</ProjectItem>
@@ -32,6 +29,9 @@
       </Folder>
       <Folder Name="Entity" TargetFolderName="Entity">
         <ProjectItem ReplaceParameters="true" TargetFileName="BaseEntity.cs">BaseEntity.cs</ProjectItem>
+        <Folder Name="Enum" TargetFolderName="Enum">
+          <ProjectItem ReplaceParameters="true" TargetFileName="LoginType.cs">LoginType.cs</ProjectItem>
+        </Folder>
         <ProjectItem ReplaceParameters="true" TargetFileName="GeneratedId.cs">GeneratedId.cs</ProjectItem>
         <Folder Name="Table" TargetFolderName="Table">
           <ProjectItem ReplaceParameters="true" TargetFileName="LoginRecord.cs">LoginRecord.cs</ProjectItem>
@@ -39,11 +39,6 @@
           <ProjectItem ReplaceParameters="true" TargetFileName="UserInfo.cs">UserInfo.cs</ProjectItem>
         </Folder>
         <Folder Name="View" TargetFolderName="View" />
-      </Folder>
-      <Folder Name="Enum" TargetFolderName="Enum">
-        <ProjectItem ReplaceParameters="true" TargetFileName="ContentType.cs">ContentType.cs</ProjectItem>
-        <ProjectItem ReplaceParameters="true" TargetFileName="FileType.cs">FileType.cs</ProjectItem>
-        <ProjectItem ReplaceParameters="true" TargetFileName="LoginType.cs">LoginType.cs</ProjectItem>
       </Folder>
       <Folder Name="Migrations" TargetFolderName="Migrations">
         <ProjectItem ReplaceParameters="true" TargetFileName="Configuration.cs">Configuration.cs</ProjectItem>

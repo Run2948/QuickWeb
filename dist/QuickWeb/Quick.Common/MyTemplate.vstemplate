@@ -19,16 +19,20 @@
       <ProjectItem ReplaceParameters="true" TargetFileName="Assemblies.cs">Assemblies.cs</ProjectItem>
       <ProjectItem ReplaceParameters="true" TargetFileName="AutoMapperConfig.cs">AutoMapperConfig.cs</ProjectItem>
       <ProjectItem ReplaceParameters="true" TargetFileName="CommonHelper.cs">CommonHelper.cs</ProjectItem>
-      <ProjectItem ReplaceParameters="true" TargetFileName="DrawingSecurityCode.cs">DrawingSecurityCode.cs</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="Config.cs">Config.cs</ProjectItem>
       <Folder Name="Extension" TargetFolderName="Extension">
         <ProjectItem ReplaceParameters="true" TargetFileName="ModelStateExtension.cs">ModelStateExtension.cs</ProjectItem>
       </Folder>
       <ProjectItem ReplaceParameters="true" TargetFileName="HangfireHelper.cs">HangfireHelper.cs</ProjectItem>
-      <ProjectItem ReplaceParameters="true" TargetFileName="JsonHelper.cs">JsonHelper.cs</ProjectItem>
       <Folder Name="Models" TargetFolderName="Models">
         <ProjectItem ReplaceParameters="true" TargetFileName="JsonNetResult.cs">JsonNetResult.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="PageRequest.cs">PageRequest.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="ResultInfo.cs">ResultInfo.cs</ProjectItem>
       </Folder>
       <Folder Name="Net" TargetFolderName="Net">
+        <Folder Name="Mime" TargetFolderName="Mime">
+          <ProjectItem ReplaceParameters="true" TargetFileName="ContentType.cs">ContentType.cs</ProjectItem>
+        </Folder>
         <ProjectItem ReplaceParameters="true" TargetFileName="WebExtensionPro.cs">WebExtensionPro.cs</ProjectItem>
       </Folder>
       <Folder Name="NoSQL" TargetFolderName="NoSQL">
@@ -41,9 +45,16 @@
       <ProjectItem ReplaceParameters="true" TargetFileName="QuickKeys.cs">QuickKeys.cs</ProjectItem>
       <ProjectItem ReplaceParameters="true" TargetFileName="readme.txt">readme.txt</ProjectItem>
       <Folder Name="Security" TargetFolderName="Security">
+        <ProjectItem ReplaceParameters="true" TargetFileName="DrawingSecurityCode.cs">DrawingSecurityCode.cs</ProjectItem>
         <ProjectItem ReplaceParameters="true" TargetFileName="Encrypt.cs">Encrypt.cs</ProjectItem>
       </Folder>
       <ProjectItem ReplaceParameters="true" TargetFileName="ServiceManager.cs">ServiceManager.cs</ProjectItem>
+      <Folder Name="Strings" TargetFolderName="Strings">
+        <ProjectItem ReplaceParameters="true" TargetFileName="JsonHelper.cs">JsonHelper.cs</ProjectItem>
+      </Folder>
+      <Folder Name="Tools" TargetFolderName="Tools">
+        <ProjectItem ReplaceParameters="true" TargetFileName="RestApi.cs">RestApi.cs</ProjectItem>
+      </Folder>
     </Project>
   </TemplateContent>
 </VSTemplate>

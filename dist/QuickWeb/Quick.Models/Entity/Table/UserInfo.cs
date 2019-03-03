@@ -17,8 +17,6 @@
 * ==============================================================================*/
 
 
-
-using Masuit.Tools.Validator;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -27,6 +25,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Masuit.Tools.Core.Validator;
 
 namespace $safeprojectname$.Entity.Table
 {

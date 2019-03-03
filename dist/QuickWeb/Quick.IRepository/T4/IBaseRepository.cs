@@ -26,10 +26,9 @@ using System.Data.Entity.Infrastructure;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Linq.Expressions;
-using System.Text;
 using System.Threading.Tasks;
 
-namespace Quick.IRepository
+namespace $safeprojectname$
 {
     public partial interface IBaseRepository<T> :IDisposable where T : class, new()
     {

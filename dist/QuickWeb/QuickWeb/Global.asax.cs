@@ -15,7 +15,7 @@ using Masuit.Tools;
 using System.Configuration;
 using Quick.Common;
 
-namespace QuickWeb
+namespace $safeprojectname$
 {
     public class Global : HttpApplication
     {

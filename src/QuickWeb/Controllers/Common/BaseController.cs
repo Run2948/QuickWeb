@@ -811,9 +811,4 @@ namespace QuickWeb.Controllers.Common
         }
         #endregion
     }
-
-    public class OtherController : Controller
-    {
-
-    }
 }
