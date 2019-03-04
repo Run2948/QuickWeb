@@ -60,7 +60,7 @@ namespace QuickWeb.Filters
                     LogManager.Debug($"发生数据模型校验错误异常\t异常源：{ex.Source}，\n请求路径：{requestUrl}，客户端用户代理：{request.UserAgent}，客户端IP：{request.UserHostAddress}", errors.ToJsonString());
                     if (filterContext.HttpContext.Request.HttpMethod.ToLower().Equals("get"))
                     {
-                        filterContext.Result = new RedirectResult("/Error/ServiceUnavailable");
+                        filterContext.Result = new RedirectResult("/ServiceUnavailable");
                     }
                     else
                     {
@@ -100,7 +100,7 @@ namespace QuickWeb.Filters
 
             if (filterContext.HttpContext.Request.HttpMethod.ToLower().Equals("get"))
             {
-                filterContext.Result = new RedirectResult("/Error/ServiceUnavailable"); 
+                filterContext.Result = new RedirectResult("/ServiceUnavailable"); 
             }
             else
             {
