@@ -91,6 +91,7 @@
   <ItemGroup>
     <Compile Include="Application\DataContext.cs" />
     <Compile Include="Common\DbProvider.cs" />
+    <Compile Include="DataInitializer.cs" />
     <Compile Include="Dto\BaseDto.cs" />
     <Compile Include="Dto\UserInfoInputDto.cs" />
     <Compile Include="Dto\UserInfoOutputDto.cs" />

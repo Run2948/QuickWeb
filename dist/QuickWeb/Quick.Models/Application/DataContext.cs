@@ -38,8 +38,10 @@ namespace $safeprojectname$.Application
         public DataContext() :
             base(DbProvider.GetDataBaseProvider())
         {
-            Database.CreateIfNotExists();
-            Database.SetInitializer(new MigrateDatabaseToLatestVersion<DataContext, $safeprojectname$.Migrations.Configuration>());
+            if(Database.Exists())
+                Database.SetInitializer(new MigrateDatabaseToLatestVersion<DataContext, $safeprojectname$.Migrations.Configuration>());
+            else
+                Database.SetInitializer(new DataInitializer());
 #if DEBUG
             Database.Log = s =>
             {

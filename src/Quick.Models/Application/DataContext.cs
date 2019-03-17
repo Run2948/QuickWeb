@@ -38,8 +38,10 @@ namespace Quick.Models.Application
         public DataContext() :
             base(DbProvider.GetDataBaseProvider())
         {
-            Database.CreateIfNotExists();
-            Database.SetInitializer(new MigrateDatabaseToLatestVersion<DataContext, Quick.Models.Migrations.Configuration>());
+            if(Database.Exists())
+                Database.SetInitializer(new MigrateDatabaseToLatestVersion<DataContext, Quick.Models.Migrations.Configuration>());
+            else
+                Database.SetInitializer(new DataInitializer());
 #if DEBUG
             Database.Log = s =>
             {
