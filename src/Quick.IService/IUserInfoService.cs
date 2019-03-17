@@ -60,13 +60,6 @@ namespace Quick.IService
         bool UsernameExist(string name);
 
         /// <summary>
-        /// 检查邮箱是否存在
-        /// </summary>
-        /// <param name="email"></param>
-        /// <returns></returns>
-        bool EmailExist(string email);
-
-        /// <summary>
         /// 修改密码
         /// </summary>
         /// <param name="name">用户名，邮箱或者电话号码</param>

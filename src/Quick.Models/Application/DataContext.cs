@@ -56,7 +56,7 @@ namespace Quick.Models.Application
             //modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
             // 设置EntityFramework中decimal类型数据精度
             modelBuilder.Conventions.Add(new DecimalPrecisionAttributeConvention());
-            modelBuilder.Entity<UserInfo>().HasMany(e => e.LoginRecord).WithRequired(e => e.UserInfo).WillCascadeOnDelete(true);
+            modelBuilder.Entity<UserInfo>().HasMany(e => e.LoginRecords).WithRequired(e => e.UserInfo).WillCascadeOnDelete(true);
         }
 
         //重写 SaveChanges

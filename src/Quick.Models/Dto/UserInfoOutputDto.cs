@@ -43,20 +43,10 @@ namespace Quick.Models.Dto
         public string NickName { get; set; }
 
         /// <summary>
-        /// 邮箱
-        /// </summary>
-        public string Email { get; set; }
-
-        /// <summary>
         /// 是否是管理员
         /// </summary>
         [DefaultValue(false)]
         public bool IsAdmin { get; set; }
-
-        /// <summary>
-        /// QQ或微信
-        /// </summary>
-        public string QQorWechat { get; set; }
 
         /// <summary>
         /// 用户头像

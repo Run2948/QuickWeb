@@ -36,22 +36,12 @@ namespace Quick.Models.Entity.Table
         /// <summary>
         /// 登录点IP
         /// </summary>
-        public string IP { get; set; }
+        public string IpAddress { get; set; }
 
         /// <summary>
         /// 登录时间
         /// </summary>
         public DateTime LoginTime { get; set; }
-
-        /// <summary>
-        /// 登录地所在省份
-        /// </summary>
-        public string Province { get; set; }
-
-        /// <summary>
-        /// 地理位置
-        /// </summary>
-        public string PhysicAddress { get; set; }
 
         /// <summary>
         /// 登录类型

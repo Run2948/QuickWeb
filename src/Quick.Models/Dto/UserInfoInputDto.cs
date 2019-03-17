@@ -69,17 +69,6 @@ namespace Quick.Models.Dto
         public bool IsAdmin { get; set; }
 
         /// <summary>
-        /// 邮箱
-        /// </summary>
-        [IsEmail]
-        public string Email { get; set; }
-
-        /// <summary>
-        /// QQ或微信
-        /// </summary>
-        public string QQorWechat { get; set; }
-
-        /// <summary>
         /// 用户头像
         /// </summary>
         public string Avatar { get; set; }

@@ -74,7 +74,7 @@ namespace Quick.Service
         /// <returns></returns>
         public UserInfo Register(UserInfo userInfo)
         {
-            UserInfo exist = GetFirstEntity(u => u.Username.Equals(userInfo.Username) || u.Email.Equals(userInfo.Email));
+            UserInfo exist = GetFirstEntity(u => u.Username.Equals(userInfo.Username));
             if (exist is null)
             {
                 var salt = $"{new Random().StrictNext()}{DateTime.Now.GetTotalMilliseconds()}".MDString2(Guid.NewGuid().ToString()).AESEncrypt();
@@ -97,13 +97,6 @@ namespace Quick.Service
             UserInfo userInfo = GetByUsername(name);
             return userInfo != null;
         }
-
-        /// <summary>
-        /// 检查邮箱是否存在
-        /// </summary>
-        /// <param name="email"></param>
-        /// <returns></returns>
-        public bool EmailExist(string email) => GetFirstEntityNoTracking(u => u.Email.Equals(email)) != null;
 
         /// <summary>
         /// 修改密码

@@ -32,10 +32,7 @@ namespace Quick.Models.Migrations
             {
                 #region Ìí¼ÓÔ¼Êø
 
-                context.Database.ExecuteSqlCommand(@"ALTER TABLE [dbo].[Post] ADD DEFAULT getdate() FOR [PostDate];
-                                                    ALTER TABLE [dbo].[Post] ADD DEFAULT getdate() FOR [ModifyDate];
-                                                    ALTER TABLE [dbo].[Post] ADD DEFAULT 0 FOR [IsFixedTop];
-                                                    ALTER TABLE [dbo].[Post] ADD DEFAULT 0 FOR [IsBanner];
+                context.Database.ExecuteSqlCommand(@"
                                                     ALTER TABLE [dbo].[SystemSetting] ADD DEFAULT 1 FOR [IsAvailable];
                                                     ALTER TABLE [dbo].[UserInfo] ADD DEFAULT 0 FOR [IsAdmin];
                                                     ");

@@ -19,16 +19,16 @@ namespace QuickWeb.Models.Hangfire
         {
             LoginRecord record = new LoginRecord()
             {
-                IP = ip,
+                IpAddress = ip,
                 LoginTime = DateTime.Now,
                 LoginType = type,
-                PhysicAddress = "",
-                Province = ip.GetProvince()
             };
             UserInfo u = UserInfoService.GetByUsername(userInfo.Username);
-            u.LoginRecord.Add(record);
+            u.LoginRecords.Add(record);
             UserInfoService.UpdateEntitySaved(u);
-            string content = System.IO.File.ReadAllText(AppDomain.CurrentDomain.BaseDirectory + "App_Data\\template\\login.html").Replace("{{name}}", u.Username).Replace("{{time}}", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")).Replace("{{ip}}", record.IP).Replace("{{address}}", record.PhysicAddress);
+
+            // TODO: (未实现) 是否要发送短信
+            string content = System.IO.File.ReadAllText(AppDomain.CurrentDomain.BaseDirectory + "App_Data\\template\\login.html").Replace("{{name}}", u.Username).Replace("{{time}}", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")).Replace("{{ip}}", record.IpAddress).Replace("{{address}}", record.IpAddress.GetProvince());
             CommonHelper.SendMail(CommonHelper.GetSettings("Title") + "账号登录通知", content, CommonHelper.GetSettings("ReceiveEmail"));
         }
     }
