@@ -9,7 +9,7 @@ using System.Text;
 using System.Web;
 using System.Web.Mvc;
 
-namespace QuickWeb.Filters
+namespace $safeprojectname$.Filters
 {
     /// <summary>
     /// 自定义异常过滤器

@@ -52,6 +52,5 @@ namespace $safeprojectname$.Controllers
         }
         #endregion
 
-
     }
 }
