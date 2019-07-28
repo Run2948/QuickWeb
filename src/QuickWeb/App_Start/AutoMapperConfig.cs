@@ -1,5 +1,5 @@
 ﻿/* ==============================================================================
-* 命名空间：Quick.Common
+* 命名空间：QuickWeb
 * 类 名 称：AutoMapperConfig
 * 创 建 者：Qing
 * 创建时间：2018-11-29 23:32:54
@@ -27,7 +27,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Quick.Common
+namespace QuickWeb
 {
     public static class AutoMapperConfig
     {

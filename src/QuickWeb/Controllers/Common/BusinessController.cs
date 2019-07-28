@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using QuickWeb.Models.RequestModel;
 
 namespace QuickWeb.Controllers.Common
 {
@@ -19,6 +20,19 @@ namespace QuickWeb.Controllers.Common
                 return false;
             return code.ToLower().Equals(vCode.ToLower());
         }
+        #endregion
+
+        #region 分页计算总页数
+        protected decimal GetPage(PageModel page)
+        {
+            return Math.Ceiling(Convert.ToDecimal(page.TotalCount) / page.PageSize);;
+        }
+        #endregion
+
+        #region 跳转自定义错误页面
+        protected ActionResult Error() => RedirectToAction("Index", "Error");
+        protected ActionResult ParamsError() => RedirectToAction("ParamsError", "Error");
+        protected ActionResult NoOrDeleted() => RedirectToAction("NoOrDeleted", "Error");
         #endregion
     }
 }

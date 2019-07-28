@@ -45,10 +45,6 @@ namespace QuickWeb.Controllers.Common
             System.Web.HttpContext.Current.Session.Abandon();
         }
 
-        #endregion
-
-        #region 跳转自定义错误页面
-        protected ActionResult Error() => RedirectToAction("Index","Error");
-        #endregion
+        #endregion       
     }
 }

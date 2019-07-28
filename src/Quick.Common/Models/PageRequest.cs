@@ -40,7 +40,7 @@ namespace Quick.Common.Models
         /// <summary>
         /// 总页数
         /// </summary>
-        public int TotalPage { get; set; }
+        public decimal TotalPage { get; set; }
         /// <summary>
         /// 总记录数
         /// </summary>
